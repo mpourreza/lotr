@@ -4,7 +4,7 @@ name: "The Chronicle of Middle-earth"
 description: "A fan encyclopedia of the characters, realms, kindreds, and turning points of Middle-earth."
 url: "https://www.imorteza.com"
 baseurl: "/lotr"
-repository: "mpourreza/lotr"
+repository: "lotr"
 logo: "/assets/images/ring.svg"
 
 theme: minimal-mistakes-jekyll
