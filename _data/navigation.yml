@@ -1,0 +1,13 @@
+main:
+  - title: "Characters"
+    url: /characters/
+  - title: "Locations"
+    url: /locations/
+  - title: "Events"
+    url: /events/
+  - title: "Peoples"
+    url: /peoples/
+  - title: "Timeline"
+    url: /timeline/
+  - title: "Search"
+    url: /search/

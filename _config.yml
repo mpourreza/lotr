@@ -1,0 +1,143 @@
+title: "The Chronicle"
+subtitle: "of Middle-earth"
+name: "The Chronicle of Middle-earth"
+description: "A fan encyclopedia of the characters, realms, kindreds, and turning points of Middle-earth."
+url: "https://mpourreza.github.io"
+baseurl: "/lotr"
+repository: "mpourreza/lotr"
+logo: "/assets/images/ring.svg"
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
+
+encoding: "utf-8"
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+search: true
+search_full_content: true
+search_provider: lunr
+breadcrumbs: true
+words_per_minute: 200
+atom_feed:
+  hide: true
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - _scripts
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+author:
+  name: "The Chronicle of Middle-earth"
+
+footer:
+  links: []
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+  - scope:
+      path: ""
+      type: characters
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+      toc: true
+      toc_sticky: true
+      toc_label: "On this page"
+      classes: wide
+      header:
+        overlay_color: "#0b0907"
+        overlay_filter: 0.35
+  - scope:
+      path: ""
+      type: locations
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+      toc: true
+      toc_sticky: true
+      toc_label: "On this page"
+      classes: wide
+      header:
+        overlay_color: "#0b0907"
+        overlay_filter: 0.35
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+      toc: true
+      toc_sticky: true
+      toc_label: "On this page"
+      classes: wide
+      header:
+        overlay_color: "#0b0907"
+        overlay_filter: 0.35
+  - scope:
+      path: ""
+      type: peoples
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+      toc: true
+      toc_sticky: true
+      toc_label: "On this page"
+      classes: wide
+      header:
+        overlay_color: "#0b0907"
+        overlay_filter: 0.35
+
+collections:
+  characters:
+    output: true
+    permalink: /:collection/:name/
+  locations:
+    output: true
+    permalink: /:collection/:name/
+  events:
+    output: true
+    permalink: /:collection/:name/
+  peoples:
+    output: true
+    permalink: /:collection/:name/
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

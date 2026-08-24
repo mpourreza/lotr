@@ -1,0 +1,14 @@
+#!/bin/sh
+# macOS /usr/bin/ruby is 2.6 and cannot run this site. Prefer Homebrew Ruby.
+export PATH="/opt/homebrew/opt/ruby/bin:/usr/local/opt/ruby/bin:$PATH"
+
+if ! command -v ruby >/dev/null; then
+  echo "Ruby not found. Install it with: brew install ruby"
+  exit 1
+fi
+
+ruby -e 'abort("Need Ruby 3.1 or newer (brew install ruby). You have #{RUBY_VERSION}, likely macOS system Ruby.") if RUBY_VERSION < "3.1"'
+
+cd "$(dirname "$0")/.."
+bundle install
+exec bundle exec jekyll serve "$@"
