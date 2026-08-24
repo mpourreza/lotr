@@ -3,6 +3,8 @@
 
 from pathlib import Path
 
+from extra_entries import write_extra_characters, write_extra_locations, write_extra_events
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -47,11 +49,12 @@ tags:
 {legacy}
 """
     out = ROOT / f"_{collection}" / f"{slug}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(body, encoding="utf-8")
 
 
 def main():
-    C, L, E, P = "/characters", "/locations", "/events", "/peoples"
+    C, L, E, P = "/characters", "/locations", "/events", "/people"
 
     # --- Characters ---
     md("characters", "frodo-baggins", "Frodo Baggins",
@@ -554,11 +557,317 @@ def main():
        ],
        "Celeborn’s later chronology is sketched in the appendices rather than in the main narrative. He should not be confused with film-silent extras; in the book he speaks and judges at the departure from Lórien.")
 
+    md("characters", "elendil", "Elendil",
+       "Leader of the Faithful who escaped Númenor's ruin and founded the kingdoms of Arnor and Gondor, father of Isildur and Anárion.",
+       ["man", "dunadan", "king"], "High King of the Dúnedain in exile", "Second Age",
+       "Elendil is a Man of Númenor, lord of the Faithful who refused Sauron's domination of the isle. When Númenor is drowned he escapes to Middle-earth with his sons and founds the Realms in Exile: Arnor in the North and Gondor in the South. He is the ancestor of Aragorn's claim and the figure in whose name the Last Alliance marches against Sauron.",
+       "Character (Man; Dúnadan; King)",
+       "Born in Númenor before its fall; descended from Elros, first King of Númenor, through the line of the Lords of Andúnië.",
+       "Isildur; Anárion; Arnor; Gondor; Gil-galad; the Last Alliance; Narsil.",
+       "To preserve the Faithful and establish the Dúnedain kingdoms in Middle-earth against Sauron's return.",
+       [
+           "- **The Faithful.** Elendil's house resists Sauron's corruption of Númenor and survives the Downfall in ships.",
+           "- **Realms in Exile.** He rules as High King from Arnor; his sons build Gondor in the South. Minas Ithil and Minas Anor are raised in their names.",
+           "- **Last Alliance.** He marches with Gil-galad against Sauron and falls on the slopes of Orodruin. Isildur takes up Narsil and cuts the Ring from Sauron's hand.",
+       ],
+       [
+           ("Isildur", f"{C}/isildur/", "Eldest son who takes the Ring after Sauron's fall."),
+           ("Aragorn", f"{C}/aragorn/", "Heir many generations later of his northern line."),
+           ("The Last Alliance", f"{E}/last-alliance/", "War in which he dies and Sauron is overthrown."),
+           ("Gondor", f"{L}/gondor/", "South-kingdom founded by his sons."),
+       ],
+       "Elendil is the root of the Dúnedain claim in the West. The shards of Narsil, his sword broken when Sauron struck him down, pass down to Aragorn as Andúril reforged.")
+
+    md("characters", "isildur", "Isildur",
+       "Eldest son of Elendil who cut the One Ring from Sauron's hand at the Last Alliance and kept it, beginning the long interval of the Third Age.",
+       ["man", "dunadan", "ring-bearer"], "King of Gondor; Isildur's Bane", "Second Age to Third Age",
+       "Isildur is a Man of the Dúnedain, son of Elendil, who with Anárion founded Gondor's citadels in the South. At the Last Alliance he takes up the hilt-shard of Narsil and cuts the One Ring from Sauron. He refuses Elrond's counsel to destroy it in Orodruin. His death in the Gladden Fields loses the Ring for nearly three millennia.",
+       "Character (Man; Dúnadan; Ring-bearer)",
+       "Born in Númenor or on the voyage to Middle-earth; eldest son of Elendil; co-founder of Gondor with Anárion.",
+       "Elendil; Anárion; Elrond; the One Ring; Arnor and Gondor; the Last Alliance.",
+       "To rule Gondor and the North-kingdom after his father; his failure is keeping the Ring as weregild.",
+       [
+           "- **Gondor's builder.** He plants the White Tree from Nimloth and raises Minas Ithil and the tower of Orthanc (wider legendarium).",
+           "- **The cutting.** With Narsil's shard he takes the Ring; Elrond and Círdan urge him to cast it into the fire. He will not.",
+           "- **The Gladden Fields.** Ambushed by Orcs, he puts on the Ring to escape and is shot in the Anduin. The Ring is lost until Déagol finds it.",
+       ],
+       [
+           ("Elendil", f"{C}/elendil/", "Father, High King slain before Orodruin."),
+           ("Elrond", f"{C}/elrond/", "Who counsels destruction of the Ring at the Sammath Naur."),
+           ("The One Ring", f"{P}/one-ring/", "Taken as weregild and lost in the river."),
+           ("Aragorn", f"{C}/aragorn/", "Heir of his line through the Chieftains of the Dúnedain."),
+           ("The Last Alliance", f"{E}/last-alliance/", "War that ends with his fateful choice."),
+       ],
+       "Isildur's refusal is the hinge of the Third Age. Tolkien treats him not as a villain but as a man who errs at the moment of victory. Aragorn's kingship is the long-delayed fulfilment of what Isildur's house was meant to be.")
+
+    md("characters", "elros", "Elros",
+       "Twin brother of Elrond who chose mortality and became the first King of Númenor, ancestor of Elendil and all the Dúnedain kings.",
+       ["half-elven", "man", "king"], "First King of Númenor", "First Age to Second Age",
+       "Elros is the son of Eärendil and Elwing, twin brother of Elrond Half-elven. At the end of the First Age the Valar grant him and his brother the choice of kindred. Elros chooses to be counted among Men and is granted a life many times longer than ordinary Men. He founds the line of Númenórean kings that leads through Elendil to Aragorn.",
+       "Character (Half-elven; Man by choice)",
+       "Born at the end of the First Age; son of Eärendil and Elwing; brother of Elrond.",
+       "Elrond; Eärendil; Elwing; Númenor; Elendil (descendant); the Valar's gift of long life.",
+       "To rule Númenor as its first king and to begin the line of the Dúnedain.",
+       [
+           "- **The choice.** Where Elrond chooses the Eldar, Elros accepts the Gift of Men with extended span—a fate Arwen will later mirror in reverse.",
+           "- **Númenor.** He rules the isle in its early glory before Sauron's later corruption.",
+           "- **Descent.** Through his line come Elendil, Isildur, and eventually Aragorn Telcontar.",
+       ],
+       [
+           ("Elrond", f"{C}/elrond/", "Twin who chose the Eldar instead."),
+           ("Eärendil", f"{C}/earendil/", "Father, star-voyager of the Silmaril."),
+           ("Elendil", f"{C}/elendil/", "Descendant who founds Arnor and Gondor."),
+           ("Aragorn", f"{C}/aragorn/", "Heir of his line in the late Third Age."),
+           ("Arwen Undómiel", f"{C}/arwen/", "Who relinquishes Elven immortality as he once accepted mortality."),
+       ],
+       "Elros binds the Half-elven line to the kingdoms of Men. His choice is the mirror of Elrond's and of Arwen's later renunciation. The encyclopedia treats him as genealogical anchor rather than as a figure in the War of the Ring itself.")
+
+    md("characters", "eorl-the-young", "Eorl the Young",
+       "Lord of the Éothéod who rode south to Gondor's aid and received Calenardhon as the land that became Rohan.",
+       ["man", "rohan", "king"], "First King of the Mark", "Third Age",
+       "Eorl the Young is the lord of the Éothéod, a people of the North related to the Rohirrim's ancestors. When Gondor calls for aid against the Balchoth, he leads his riders south in the great ride remembered in the Oath of Eorl. Cirion, Steward of Gondor, grants him Calenardhon, thereafter called Rohan. Every king of the Mark descends from him.",
+       "Character (Man of the North; King)",
+       "Born among the Éothéod beyond the Misty Mountains; came south in T.A. 2510 at Gondor's need.",
+       "Cirion of Gondor; the Éothéod; Rohan; the Oath of Eorl; the Mering Stream.",
+       "To answer Gondor's call and to establish his people in the granted land.",
+       [
+           "- **The Ride.** Eorl's host crosses the Anduin and turns the battle at the Field of Celebrant.",
+           "- **The Gift.** Calenardhon is given in perpetual alliance; the Éothéod become the Rohirrim.",
+           "- **The Oath.** Gondor and Rohan bind themselves: aid in need, mutual defence—a oath Théoden honours at the Pelennor.",
+       ],
+       [
+           ("Rohan", f"{L}/rohan/", "The realm he founded."),
+           ("Théoden", f"{C}/theoden/", "A late king of his line in the War of the Ring."),
+           ("Éomer", f"{C}/eomer/", "Last king of the Third Age in his house."),
+           ("Gondor", f"{L}/gondor/", "Ally whose need brought him south."),
+           ("The Battle of the Pelennor Fields", f"{E}/pelennor-fields/", "Where the Oath is fulfilled again."),
+       ],
+       "Eorl is Rohan's founding name. The book does not send him into the main narrative, but Théoden's ride and Éomer's kingship are unintelligible without him. The Oath of Eorl is living politics, not antique poetry.")
+
+    md("characters", "earendil", "Eärendil",
+       "Half-elven mariner who sailed to Valinor with a Silmaril and became the star Eärendil, father of Elrond and Elros.",
+       ["half-elven"], "The Mariner; the Star", "First Age to all Ages",
+       "Eärendil is the son of Tuor and Idril, husband of Elwing, and father of Elrond and Elros. He builds Vingilot and, bearing a Silmaril, passes the enchantments of the West and pleads before the Valar for aid against Morgoth. For this he is set in the heavens as the star the Elves hallow. His line is the bridge between Men, Elves, and the Half-elven choices that shape the Second and Third Ages.",
+       "Character (Half-elven; Mariner)",
+       "Born in Gondolin; wedded Elwing at the Mouths of Sirion; sailed West with a Silmaril at the end of the First Age.",
+       "Elwing; Elrond; Elros; Tuor and Idril; the Silmarils; Valinor.",
+       "To seek the Valar's mercy for Elves and Men against Morgoth; to become the star of hope.",
+       [
+           "- **The voyages.** He is a mariner of the Elder Days, seeking a path when Middle-earth lies under Morgoth's shadow.",
+           "- **The Silmaril.** With Elwing he bears one of Fëanor's jewels to the West; the Valar receive him and set him in the sky.",
+           "- **The sons.** Elrond and Elros are born before the War of Wrath; each will choose a different kindred.",
+       ],
+       [
+           ("Elrond", f"{C}/elrond/", "Son who chose the Eldar."),
+           ("Elros", f"{C}/elros/", "Son who chose Men and ruled Númenor."),
+           ("Elwing", f"{C}/elwing/", "Wife who bore the Silmaril to him."),
+           ("Lúthien", f"{C}/luthien/", "Ancestor through Elwing's line, model of mortal choice."),
+           ("Aragorn", f"{C}/aragorn/", "Descendant through Elros and Elendil."),
+       ],
+       "Eärendil is named in *The Lord of the Rings* as the star Frodo and Sam see from the Morgai—a sign of hope. His genealogy explains why Elrond is Half-elven and why Aragorn's claim is also an Elven kinship claim.")
+
+    md("characters", "elwing", "Elwing",
+       "Daughter of Dior and Nimloth who bore the Silmaril to Eärendil and became mother of Elrond and Elros.",
+       ["half-elven", "noldor"], "Keeper of the Silmaril", "First Age",
+       "Elwing is the daughter of Dior and Nimloth, granddaughter of Lúthien and Beren. When the Sons of Fëanor assail her refuge at the Mouths of Sirion, she casts herself into the Sea with the Silmaril and is borne to Eärendil. Together they sail to Valinor. She is the link between Lúthien's mortal choice and the Half-elven line of Rivendell.",
+       "Character (Half-elven)",
+       "Born in the First Age; heir of Lúthien; wedded Eärendil; mother of Elrond and Elros.",
+       "Eärendil; Elrond; Elros; Lúthien; the Silmaril; the Havens of Sirion.",
+       "To preserve the Silmaril and unite her fate with Eärendil's voyage West.",
+       [
+           "- **Her heritage.** She carries the light of the Silmaril through Lúthien's line.",
+           "- **The flight.** Pursued by the Sons of Fëanor, she escapes into the Sea and is reunited with Eärendil in bird-form (wider legendarium).",
+           "- **The West.** She accompanies the plea that brings the Host of the West against Morgoth.",
+       ],
+       [
+           ("Eärendil", f"{C}/earendil/", "Husband; star-voyager."),
+           ("Elrond", f"{C}/elrond/", "Son who becomes lord of Rivendell."),
+           ("Elros", f"{C}/elros/", "Son who becomes first King of Númenor."),
+           ("Lúthien", f"{C}/luthien/", "Grandmother whose story echoes in Arwen's choice."),
+           ("Galadriel", f"{C}/galadriel/", "Kinswoman of the Noldor, fellow survivor into the Third Age."),
+       ],
+       "Elwing does not appear in the main *Lord of the Rings* narrative, but her descent explains Elrond's authority and the Silmaril-light remembered in Eärendil's star.")
+
+    md("characters", "luthien", "Lúthien",
+       "An Elf who chose mortality for love of Beren, recovered a Silmaril from Morgoth's crown, and became ancestor of Elrond's line.",
+       ["half-elven", "noldor"], "Tinúviel; the Morning Star of the Elves", "First Age",
+       "Lúthien Tinúviel is the daughter of Thingol and Melian, beloved of the Man Beren. Together they wrest a Silmaril from Morgoth's iron crown—a deed no army achieved. She chooses mortality and dies with Beren, though both are briefly returned. Her choice is the archetype Arwen cites when she weds Aragorn and accepts the Gift of Men.",
+       "Character (Half-elven by parentage; chose mortality)",
+       "Born in Doriath in the First Age; daughter of Thingol and the Maia Melian; wedded Beren.",
+       "Beren; Dior (son); Elwing (granddaughter); Elrond's line; Arwen's model.",
+       "To prove that love and free will can achieve what force cannot; to bind Elf and Man in one line.",
+       [
+           "- **The Quest.** With Beren she enters Angband and takes a Silmaril from Morgoth's crown.",
+           "- **The choice.** She renounces immortality for Beren's sake—the first such union of its kind.",
+           "- **The line.** Through Dior and Elwing her blood runs to Elrond, Elros, and eventually Arwen.",
+       ],
+       [
+           ("Elrond", f"{C}/elrond/", "Descendant many generations removed."),
+           ("Arwen Undómiel", f"{C}/arwen/", "Who repeats her choice with Aragorn."),
+           ("Elwing", f"{C}/elwing/", "Granddaughter who bore the Silmaril onward."),
+           ("Aragorn", f"{C}/aragorn/", "Descendant through Elros and the Dúnedain."),
+           ("Galadriel", f"{C}/galadriel/", "Contemporary of the First Age, kin of the same world."),
+       ],
+       "Arwen is called Undómiel in echo of Lúthien. The book treats Lúthien's story as legend living in the present: Elrond names it when he speaks of his daughter's choice.")
+
+    md("characters", "celebrían", "Celebrían",
+       "Daughter of Galadriel and Celeborn, wife of Elrond, and mother of Arwen; wounded by Orcs in the Redhorn Pass and later sailed West.",
+       ["half-elven", "noldor"], "Lady of Rivendell", "Second Age to Third Age",
+       "Celebrían is the daughter of Galadriel and Celeborn, wed to Elrond in the Second Age. She bears him Arwen and the twin sons Elladan and Elrohir (named in the wider legendarium). In T.A. 2509 she is waylaid by Orcs in the Redhorn Pass and wounded; though healed, she sails West, leaving Elrond to endure Middle-earth without her.",
+       "Character (Half-elven)",
+       "Born in the Second Age; daughter of Galadriel and Celeborn; wife of Elrond; mother of Arwen.",
+       "Galadriel; Celeborn; Elrond; Arwen; Rivendell; Lothlórien.",
+       "To unite two great Elven houses in marriage and to bear the next generation of Half-elven choice.",
+       [
+           "- **Marriage.** She weds Elrond, linking Lórien's lords to Imladris.",
+           "- **Motherhood.** Arwen is born in the Third Age; Celebrían's fate shapes Elrond's later grief.",
+           "- **The wounding.** Orc-assault in the mountains; she departs over Sea though Elrond remains.",
+       ],
+       [
+           ("Galadriel", f"{C}/galadriel/", "Mother, Lady of Lórien."),
+           ("Celeborn", f"{C}/celeborn/", "Father, co-lord of the Golden Wood."),
+           ("Elrond", f"{C}/elrond/", "Husband, lord of Rivendell."),
+           ("Arwen Undómiel", f"{C}/arwen/", "Daughter who chooses mortality."),
+           ("Rivendell", f"{L}/rivendell/", "House she shared with Elrond."),
+       ],
+       "Celebrían does not walk in the War of the Ring, but her parentage explains Arwen's kinship with Galadriel and her upbringing between Lórien and Rivendell.")
+
+    md("characters", "thranduil", "Thranduil",
+       "Sindarin King of the Woodland Realm in northern Mirkwood, father of Legolas and captor (and loser) of Gollum before the War of the Ring.",
+       ["elf", "sindar", "king"], "King of the Woodland Realm", "First Age to Fourth Age",
+       "Thranduil is the Elvenking of Mirkwood, a Sindar who rules the Woodland Realm from underground halls in the forest's northern reaches. He is Legolas's father. His people capture Gollum after he leaves the Mountains; Gollum later escapes, news Legolas brings to the Council of Elrond. He fights in the War of the Ring against Dol Guldur (appendices).",
+       "Character (Elf; Sinda; King)",
+       "Son of Oropher (wider legendarium); migrated to Greenwood the Great; rules after his father's fall in the Last Alliance.",
+       "Legolas; Mirkwood; Gollum (prisoner); the Elvenking's halls; Dol Guldur as neighbour-enemy.",
+       "To guard his forest realm and to resist the Shadow spreading from southern Mirkwood.",
+       [
+           "- **The Hobbit.** He hosts and then imprisons Thorin's company; the dragon-slaying and the Battle of Five Armies touch his borders.",
+           "- **Gollum.** His folk capture the creature; Legolas reports the escape at Rivendell.",
+           "- **The War.** After Sauron's fall his realm is cleansed of Dol Guldur's influence (appendices).",
+       ],
+       [
+           ("Legolas", f"{C}/legolas/", "Son, Fellowship member."),
+           ("Mirkwood", f"{L}/mirkwood/", "His darkened forest realm."),
+           ("Gollum", f"{C}/gollum/", "Prisoner who escapes his guard."),
+           ("Galadriel", f"{C}/galadriel/", "Fellow Elf-lord of the age, ally in the wider war."),
+       ],
+       "Thranduil is more prominent in *The Hobbit* than in *The Lord of the Rings*, but Legolas's kingship and Gollum's escape are structurally important to the Quest.")
+
+    md("characters", "durin", "Durin the Deathless",
+       "First of the Fathers of the Dwarves, founder of Khazad-dûm, whose name and likeness recur in the line of Durin's Folk.",
+       ["dwarf", "king"], "Durin I; the Deathless", "Elder Days",
+       "Durin the Deathless is the eldest of the Seven Fathers of the Dwarves, awakened by Aulë and set to lead his kindred. He founds Khazad-dûm (Moria) beneath the Misty Mountains and rules long. Dwarven legend holds that he returns in later ages in the likeness of his descendants—hence Durin II, III, and so on, kings of Durin's Folk.",
+       "Character (Dwarf; Father of the Folk)",
+       "Awakened in the Elder Days; founder of Khazad-dûm; progenitor of Durin's Folk.",
+       "Khazad-dûm; the Longbeards; Balin; Gimli; Thorin's line—all of Durin's Folk.",
+       "To establish the greatest of the Dwarf-mansions and to begin the line that bears his name.",
+       [
+           "- **Khazad-dûm.** He delves the halls later called Moria, rich in mithril.",
+           "- **The Deathless.** Dwarves say he sleeps rather than dies, and will return—a belief tied to look-alike kings.",
+           "- **The Folk.** All Longbeards of the Third Age claim descent from him.",
+       ],
+       [
+           ("Moria", f"{L}/moria/", "Khazad-dûm, his mansion."),
+           ("Gimli", f"{C}/gimli/", "A Dwarf of his Folk in the War of the Ring."),
+           ("Thorin Oakenshield", f"{C}/thorin-oakenshield/", "King under the Mountain of his line."),
+           ("Balin", f"{C}/balin/", "Lord who attempted to refound Khazad-dûm."),
+           ("Dwarves", f"{P}/dwarves/", "The kindred he fathered."),
+       ],
+       "Durin does not appear in the Third-Age narrative, but Gimli's pride in Moria and Balin's tomb inscription ('Durin's Folk') assume the reader knows his name.")
+
+    md("characters", "thorin-oakenshield", "Thorin Oakenshield",
+       "King under the Mountain who led the Quest of Erebor, reclaimed the Lonely Mountain from Smaug, and died in the Battle of Five Armies.",
+       ["dwarf", "king"], "King under the Mountain", "Third Age",
+       "Thorin II Oakenshield is a Dwarf of Durin's Folk, exiled king of Erebor, leader of the company in *The Hobbit*. He reclaims the Lonely Mountain from Smaug and dies defending his gains against Bolg's host at the Battle of Five Armies. His cousin Dáin succeeds him. The Arkenstone and his burial with Orcrist belong to the same tale that brings Bilbo—and the Ring—into the wider history.",
+       "Character (Dwarf; King)",
+       "Born in the Third Age; son of Thráin II; heir of Thrór; exiled long in the Blue Mountains before the Quest.",
+       "Balin; Glóin; Dáin Ironfoot; Bilbo Baggins; Erebor; the Arkenstone.",
+       "To reclaim Erebor and restore Durin's Folk in the Mountain.",
+       [
+           "- **Exile.** Smaug drove his people from Erebor; Thráin's madness and capture in Dol Guldur leave Thorin lord of a scattered folk.",
+           "- **The Quest.** With Gandalf's counsel he hires Bilbo and twelve Dwarves; the dragon falls, treasure is disputed.",
+           "- **The battle.** He dies on Ravenhill, reconciled with Bilbo; Dáin becomes King under the Mountain.",
+       ],
+       [
+           ("Bilbo Baggins", f"{C}/bilbo-baggins/", "Burglar of the company; finder of the Ring."),
+           ("Glóin", f"{C}/gloin/", "Companion; father of Gimli."),
+           ("Balin", f"{C}/balin/", "Elder companion, later Lord of Moria."),
+           ("Dáin Ironfoot", f"{C}/dain-ironfoot/", "Cousin and successor as king."),
+           ("Erebor", f"{L}/erebor/", "The Mountain he reclaimed."),
+       ],
+       "Thorin connects *The Hobbit* to the legendarium's Dwarf-politics. Gimli is the son of his companion Glóin; Balin's later colony in Moria is a direct sequel to Thorin's company.")
+
+    md("characters", "gloin", "Glóin",
+       "Dwarf of Thorin's company, father of Gimli, who represents Erebor at the Council of Elrond with news of the Mountain's unease.",
+       ["dwarf"], "Companion of Thorin; father of Gimli", "Third Age",
+       "Glóin is a Dwarf of Durin's Folk, one of Thorin Oakenshield's twelve companions on the Quest of Erebor. He survives the Battle of Five Armies and lives to old age under Dáin's rule. In T.A. 3018 he comes to Rivendell with his son Gimli and messages from Dáin concerning Bilbo's Ring—setting Gimli on the road to the Fellowship.",
+       "Character (Dwarf)",
+       "Born in the Third Age; fought at Erebor; father of Gimli; messenger to the Council.",
+       "Gimli; Thorin; Dáin; Erebor; Bilbo; the Fellowship by his son's membership.",
+       "To serve the king under the Mountain and to carry Dáin's counsel to Elrond.",
+       [
+           "- **The Quest.** He walks to Erebor with Thorin and Bilbo.",
+           "- **Peace.** He lives prosperously in Erebor until the War of the Ring.",
+           "- **Rivendell.** He attends the Council with Gimli; his tale of Dain's wariness helps launch the Fellowship.",
+       ],
+       [
+           ("Gimli", f"{C}/gimli/", "Son, Fellowship member."),
+           ("Thorin Oakenshield", f"{C}/thorin-oakenshield/", "King he followed to Erebor."),
+           ("Dáin Ironfoot", f"{C}/dain-ironfoot/", "King he serves in later years."),
+           ("Bilbo Baggins", f"{C}/bilbo-baggins/", "Former companion of the Quest."),
+           ("The Council of Elrond", f"{E}/council-of-elrond/", "Where he brings news from the North."),
+       ],
+       "Glóin is the genealogical link between *The Hobbit*'s company and the War of the Ring. The book introduces Gimli as Glóin's son at the Council—a detail easy to miss but structurally neat.")
+
+    md("characters", "balin", "Balin",
+       "Elder Dwarf of Thorin's company who later led a failed colony to refound Khazad-dûm, recorded in the tomb-book the Fellowship finds in Moria.",
+       ["dwarf"], "Lord of Moria (briefly)", "Third Age",
+       "Balin is a Dwarf of Durin's Folk, among the oldest of Thorin's companions. After Erebor's reclamation he prospers until, in T.A. 2989, he leads an expedition to Moria seeking to restore Khazad-dûm. The colony is destroyed by Orcs; Balin is slain. The Fellowship discovers his tomb and the record of the colony's five-year failure—Gimli's grief at the place.",
+       "Character (Dwarf)",
+       "Companion of Thorin; later colonist-lord of Moria; friend of Bilbo.",
+       "Thorin; Glóin; Gimli; Moria; the Chamber of Mazarbul record.",
+       "To refound the ancient mansion of Durin; to fail where Durin once thrived.",
+       [
+           "- **The Quest.** He is a trusted elder in Thorin's company.",
+           "- **The colony.** He enters Moria with Ori and Óin among others; Orcs overrun them.",
+           "- **The record.** 'We cannot get out'—the book the Fellowship reads in the tomb.",
+       ],
+       [
+           ("Moria", f"{L}/moria/", "Mansion he tried to reclaim."),
+           ("Gimli", f"{C}/gimli/", "Son of his companion Glóin; mourns at his tomb."),
+           ("Thorin Oakenshield", f"{C}/thorin-oakenshield/", "King of the earlier Quest."),
+           ("Durin the Deathless", f"{C}/durin/", "Founder of the halls Balin sought to reopen."),
+           ("Gandalf", f"{C}/gandalf/", "Who leads the Fellowship through Balin's dead domain."),
+       ],
+       "Balin's colony explains why Moria is full of Orcs yet holds Dwarvish graves. Gimli's hope entering Moria is the hope of Durin's Folk to return—a hope the tomb-book crushes.")
+
+    md("characters", "dain-ironfoot", "Dáin Ironfoot",
+       "Dwarf-lord who slew Azog's heir at Azanulbizar, succeeded Thorin as King under the Mountain, and fell defending Erebor in the War of the Ring.",
+       ["dwarf", "king"], "King under the Mountain", "Third Age",
+       "Dáin II Ironfoot is a Dwarf of Durin's Folk, cousin of Thorin Oakenshield, renowned for killing Azog's son Náin at the Battle of Azanulbizar. He arrives with armed Dwarves at the Battle of Five Armies and becomes King under the Mountain when Thorin dies. In the War of the Ring he refuses to yield Sauron's messengers and dies at the gates of Erebor aged 252 (appendices).",
+       "Character (Dwarf; King)",
+       "Born in the Third Age; lord of the Iron Hills before Erebor; cousin and successor of Thorin.",
+       "Thorin; Glóin; Gimli; Erebor; the Iron Hills; Brand of Dale as ally.",
+       "To rule Erebor after Thorin and to hold the North against Sauron's northern assault.",
+       [
+           "- **Azanulbizar.** He avenges Náin and earns his name Ironfoot.",
+           "- **Five Armies.** He turns the battle with Dwarves of the Iron Hills.",
+           "- **The War.** He dies defending Erebor; his son Thorin III Stonehelm succeeds.",
+       ],
+       [
+           ("Thorin Oakenshield", f"{C}/thorin-oakenshield/", "Cousin he succeeds."),
+           ("Glóin", f"{C}/gloin/", "Subject and fellow veteran of the Quest."),
+           ("Erebor", f"{L}/erebor/", "Kingdom he ruled."),
+           ("Gimli", f"{C}/gimli/", "Subject who walks the southern war."),
+       ],
+       "Dáin's death in the North is appendix-canon but shows the War was not only Rohan and Gondor. Glóin's message at the Council comes from his court.")
+
+    write_extra_characters(md, C, L, E, P)
     print("characters done")
-    # locations, events, peoples continue in same function - split by calling more md() below
+    # locations, events, people continue in same function - split by calling more md() below
     write_locations(md, C, L, E, P)
     write_events(md, C, L, E, P)
-    write_peoples(md, C, L, E, P)
+    write_kindreds(md, C, L, E, P)
     print("all done")
 
 
@@ -997,6 +1306,8 @@ def write_locations(md, C, L, E, P):
        ],
        "Orthanc outlasts the villain who occupied it. That distinction—tower versus ring—is book-accurate and easy to blur in adaptation.")
 
+    write_extra_locations(md, C, L, E, P)
+
 
 def write_events(md, C, L, E, P):
     md("events", "council-of-elrond", "The Council of Elrond",
@@ -1206,9 +1517,11 @@ def write_events(md, C, L, E, P):
        ],
        "The Dead are a weapon no Steward would touch. The book releases them after Pelargir; they do not fight on the Pelennor as a ghost-army in the novel (the film extends their presence onto the field).")
 
+    write_extra_events(md, C, L, E, P)
 
-def write_peoples(md, C, L, E, P):
-    md("peoples", "hobbits", "Hobbits",
+
+def write_kindreds(md, C, L, E, P):
+    md("kindreds", "hobbits", "Hobbits",
        "A shy agrarian people of the Shire and Bree-land, overlooked by the great, and therefore suited to carry a burden that magnifies the will to dominate.",
        ["kindred"], "The Halflings; the Little People", "Third Age",
        "Hobbits are a mortal people related in origin to Men, small in stature, concentrated in the Shire and in Bree-land in the late Third Age. Their courage, when it appears, often looks like stubbornness. The Wise guess that a Hobbit’s small desire is harder for the Ring to inflame into empire—a guess that is almost true, and the almost is the drama of Frodo and Sméagol.",
@@ -1227,7 +1540,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "Hobbits are Tolkien’s narrative instrument for seeing epic from near the ground. They are not children; the book is firm on that point even when the films infantilize Pippin at times.")
 
-    md("peoples", "elves", "Elves",
+    md("kindreds", "elves", "Elves",
        "The Firstborn, immortal within the life of the world, already fading in the Third Age, whose last great acts are counsel, refuge, and departure.",
        ["kindred"], "The Firstborn; the Eldar", "All Ages",
        "Elves are the Elder Kindred, awake before Men, bound to the world until its end. In the Third Age they are a remnant: woodland princes, Noldorin exiles, mariners of Lindon. Their Rings preserve rather than conquer. In the War they fight at need, but their deeper role is memory—and leave-taking.",
@@ -1248,7 +1561,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "Elves in *The Lord of the Rings* are not a generic shining army. Distinctions of kindred and the theme of fading are canonical. Immortality here is not invulnerability.")
 
-    md("peoples", "dwarves", "Dwarves",
+    md("kindreds", "dwarves", "Dwarves",
        "A hardy people of stone and craft, the Children of Aulë, makers of halls and long memories, whose representative in the Fellowship becomes an Elf-friend.",
        ["kindred"], "Khazâd; the Children of Aulë", "All Ages",
        "Dwarves are a mortal kindred (long-lived, not Elven-immortal) made by Aulë and given life by Ilúvatar in the wider legendarium. They mine, remember insults, and love work that outlasts a lifespan. Their Seven Rings kindled greed more than wraith-life. Moria’s doom was a Balrog, not a slow fade of the Elvish sort.",
@@ -1268,7 +1581,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "Dwarves are not comic relief in the novel, though they have grim humor. Gimli’s path—Galadriel, Legolas, Aglarond, the West—is unusual, not typical of all Khazâd.")
 
-    md("peoples", "men", "Men",
+    md("kindreds", "men", "Men",
        "The Followers, mortal peoples of many kingdoms—Dúnedain, Rohirrim, Easterlings, Haradrim—whose Age begins in earnest when the Elves depart.",
        ["kindred"], "The Followers; the Secondborn", "All Ages",
        "Men are the Secondborn, mortal, heirs of the world’s future in Tolkien’s scheme. They are the most divided people in the War: Númenor’s heirs, Rohan’s riders, and nations under the Shadow. The War of the Ring is the last time Elves and Dwarves stand so near the centre of the West’s story.",
@@ -1289,7 +1602,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "After the Elves’ departure, the problems of Middle-earth become, more and more, the problems of Men. That is the Fourth Age’s premise.")
 
-    md("peoples", "ents", "Ents",
+    md("kindreds", "ents", "Ents",
        "Tree-herds whose language is slow and whose wrath, once gathered, unmakes a wizard’s fortress.",
        ["kindred"], "Onodrim; the Shepherds of the Trees", "Elder Days to Third Age",
        "Ents are a race of tree-herds, made (in the legendarium) to keep the woods from others’ axes. They lose the Entwives and, with them, a future of children. By the War they are a remnant that can still surprise a world that has filed them under folklore. Their march is not cavalry but landscape choosing a side.",
@@ -1309,7 +1622,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "Ents are unique to this war’s strangeness. They are not allegory for a modern political party; they are a mythic answer to industrialized felling, written before that vocabulary was common.")
 
-    md("peoples", "orcs", "Orcs",
+    md("kindreds", "orcs", "Orcs",
        "A numerous, cruel soldiery bred for war, divided by masters and hatreds, the rank-and-file of Mordor and Isengard.",
        ["kindred", "shadow"], "Goblins; the hosts of the Dark Lord", "First Age to Third Age",
        "Orcs are the ordinary horror of the wars of the legendarium: not unique like the Ring, but a system of fear, breeding pits, and stolen crafts. They quarrel among themselves, which twice aids the Hobbits inside Mordor. Uruk-hai are Saruman’s (and in Mordor, Sauron’s) larger, sun-tolerant soldiers. The published *Lord of the Rings* does not settle a single metaphysical origin-story with scholastic finality; it shows them as made for cruelty and war.",
@@ -1329,7 +1642,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "The chronicle does not linger on Orcish inner life. It shows enough to make the factories of Isengard and the tower of Cirith Ungol feel populated—and doomed when their masters fall.")
 
-    md("peoples", "istari", "The Istari",
+    md("kindreds", "istari", "The Istari",
        "Five Maiar sent in the shapes of aged Men to contest Sauron by stirring resistance, not by matching power with power.",
        ["maiar", "order"], "The Wizards", "Third Age",
        "The Istari are an order of Wizards: Maiar clad as old Men, forbidden to dominate the peoples of Middle-earth or to match Sauron force for force. That rule is the test. Gandalf keeps it; Saruman breaks it; Radagast turns aside to beasts and birds; the two Blue Wizards pass out of the western tale (their fates are sketched only in later notes, not in *The Lord of the Rings* narrative).",
@@ -1348,7 +1661,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "A wizard’s staff is office as much as weapon. When Saruman’s is broken, the office has already been empty for years. The novel is not a treatise on all five; it is a story of two.")
 
-    md("peoples", "nazgul", "The Nazgûl",
+    md("kindreds", "nazgul", "The Nazgûl",
        "Nine kings of Men who took Rings from Sauron and faded into enslaved terror, the Dark Lord’s most trusted hunters.",
        ["wraiths", "shadow"], "The Nine; the Ringwraiths", "Second Age to Third Age",
        "The Nazgûl are the Nine, Men who accepted Rings of Power and became wraiths wholly subject to the One. They smell the Ring, unmake courage by nearness, and serve as captains and hunters. Their chief is the Witch-king. When he falls, the others continue until the Ring is cut from the world; then they go out like flames deprived of oil.",
@@ -1369,7 +1682,7 @@ def write_peoples(md, C, L, E, P):
        ],
        "The Nine are what the Ring promises Men. They are not independent Dark Lords. Film visibility (faces, or none) varies; the book stresses hood, voice, and the wound of the unseen blade.")
 
-    md("peoples", "one-ring", "The One Ring",
+    md("kindreds", "one-ring", "The One Ring",
        "Sauron’s master-ring, a tool of domination containing much of his native power, which unmakes him when it is unmade.",
        ["artifact", "ring"], "Isildur’s Bane; the Precious", "Second Age to Third Age",
        "The One Ring is the master-ring forged by Sauron in Orodruin to govern the other Rings of Power. It contains a great part of his strength. It lengthens life by stretching it thin and offers each bearer a kingdom cut to that bearer’s hunger. Destroying it is an anti-quest: not to win an object but to lose one on purpose.",

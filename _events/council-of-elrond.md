@@ -30,7 +30,7 @@ The Council of Elrond is a meeting in Imladris at which Elves, Dwarves, Men, and
 - **[Elrond]({{ '/characters/elrond/' | relative_url }}):** Host and convener.
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Who accepts the burden.
 - **[Rivendell]({{ '/locations/rivendell/' | relative_url }}):** Place of the Council.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Object of the debate.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Object of the debate.
 
 ## Legacy & Significance
 

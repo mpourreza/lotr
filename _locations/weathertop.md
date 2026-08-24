@@ -27,7 +27,7 @@ Weathertop is the high hill of Amon Sûl, once a great tower of Arnor holding a 
 
 - **[The Witch-king of Angmar]({{ '/characters/witch-king/' | relative_url }}):** Who stabs Frodo here.
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Bearer marked by a Morgul-knife.
-- **[The Nazgûl]({{ '/peoples/nazgul/' | relative_url }}):** Hunters on the Road.
+- **[The Nazgûl]({{ '/people/nazgul/' | relative_url }}):** Hunters on the Road.
 
 ## Legacy & Significance
 

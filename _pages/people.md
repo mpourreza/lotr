@@ -1,8 +1,8 @@
 ---
-title: Peoples
+title: People
 layout: collection
-permalink: /peoples/
-collection: peoples
+permalink: /people/
+collection: kindreds
 entries_layout: grid
 sort_by: title
 classes: wide

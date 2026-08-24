@@ -198,6 +198,125 @@ h1, h2, h3, h4 {
   }
 }
 
+.family-tree {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(20, 16, 12, 0.92), rgba(12, 10, 8, 0.92));
+  border: 1px solid $border-color;
+  overflow-x: auto;
+}
+
+.tree-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tree-row--fork {
+  gap: 2rem;
+}
+
+.tree-row--compact {
+  gap: 1rem;
+}
+
+.tree-row--wrap {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.tree-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 8rem;
+}
+
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid $border-color;
+  background: rgba(11, 9, 7, 0.6);
+  text-align: center;
+  font-family: $header-font-family;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+}
+
+.tree-node a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.tree-node a:hover {
+  color: $link-color-hover;
+}
+
+.tree-node--plain {
+  color: $muted-text-color;
+  font-style: italic;
+}
+
+.tree-node--pair {
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tree-node--choice {
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
+.tree-union {
+  color: $muted-text-color;
+  font-size: 0.75rem;
+  align-self: center;
+}
+
+.tree-note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+  color: $muted-text-color;
+  font-family: $serif;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.tree-connector {
+  width: 2px;
+  height: 1.25rem;
+  margin: 0.15rem auto;
+  background: $border-color;
+}
+
+.tree-connector--fork {
+  position: relative;
+  width: 60%;
+  max-width: 24rem;
+  height: 2px;
+  margin: 0.5rem auto;
+  background: $border-color;
+}
+
+@media (max-width: 640px) {
+  .tree-row--fork {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .family-tree {
+    padding: 1rem;
+  }
+}
+
 .layout--collection.wide .archive {
   float: none;
   width: 100%;

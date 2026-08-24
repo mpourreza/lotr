@@ -14,7 +14,7 @@ excerpt: "A path from the forging in Orodruin to the white ship at Mithlond, wit
   <li>
     <time>S.A. 1600</time>
     <div>
-      <h2><a href="{{ '/peoples/one-ring/' | relative_url }}">The One Ring is forged</a></h2>
+      <h2><a href="{{ '/people/one-ring/' | relative_url }}">The One Ring is forged</a></h2>
       <p>In the fires of Orodruin, Sauron completes the master-ring and the long war for the other Rings begins in earnest.</p>
     </div>
   </li>

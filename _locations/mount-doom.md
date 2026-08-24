@@ -26,7 +26,7 @@ Mount Doom is the volcano in Mordor bound to Sauron’s ring-craft. The Sammath 
 
 ## Notable Connections & Relationships
 
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Made and unmade here.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Made and unmade here.
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Bearer who cannot cast it away.
 - **[Gollum]({{ '/characters/gollum/' | relative_url }}):** Who takes it into the fire.
 - **[The Destruction of the One Ring]({{ '/events/destruction-of-the-ring/' | relative_url }}):** The event of 25 March 3019.

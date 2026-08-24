@@ -29,7 +29,7 @@ The Shire is the homeland of the Hobbits of the late Third Age, lying between th
 
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Who leaves it so that it may remain.
 - **[The Scouring of the Shire]({{ '/events/scouring-of-the-shire/' | relative_url }}):** Its own small war.
-- **[Hobbits]({{ '/peoples/hobbits/' | relative_url }}):** Its people.
+- **[Hobbits]({{ '/people/hobbits/' | relative_url }}):** Its people.
 
 ## Legacy & Significance
 

@@ -31,7 +31,7 @@ Galadriel is one of the greatest of the Noldor remaining in Middle-earth in the 
 - **[Lothlórien]({{ '/locations/lothlorien/' | relative_url }}):** The Golden Wood held by her power and Celeborn’s rule.
 - **[Elrond]({{ '/characters/elrond/' | relative_url }}):** Kinsman and fellow-keeper of one of the Three.
 - **[Celeborn]({{ '/characters/celeborn/' | relative_url }}):** Her husband and co-lord of the Wood.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Offered to her; she will not take it.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Offered to her; she will not take it.
 
 ## Legacy & Significance
 

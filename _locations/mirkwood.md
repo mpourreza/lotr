@@ -27,7 +27,7 @@ Mirkwood is a great forest east of the Anduin. It took a new name when a Necroma
 
 - **[Legolas]({{ '/characters/legolas/' | relative_url }}):** Prince of this realm.
 - **[Sauron]({{ '/characters/sauron/' | relative_url }}):** Whose Necromancer-presence named the wood.
-- **[Elves]({{ '/peoples/elves/' | relative_url }}):** Thranduil’s Silvan people.
+- **[Elves]({{ '/people/elves/' | relative_url }}):** Thranduil’s Silvan people.
 
 ## Legacy & Significance
 

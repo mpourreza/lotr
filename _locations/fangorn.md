@@ -26,7 +26,7 @@ Fangorn is a remnant forest older than the surrounding kingdoms, named for Treeb
 ## Notable Connections & Relationships
 
 - **[Treebeard]({{ '/characters/treebeard/' | relative_url }}):** Shepherd of the wood.
-- **[Ents]({{ '/peoples/ents/' | relative_url }}):** Its people.
+- **[Ents]({{ '/people/ents/' | relative_url }}):** Its people.
 - **[Isengard]({{ '/locations/isengard/' | relative_url }}):** Object of their wrath.
 
 ## Legacy & Significance

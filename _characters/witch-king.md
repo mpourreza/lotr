@@ -27,7 +27,7 @@ The Witch-king is the lord of the Ringwraiths, a Man who took a Ring of Power an
 
 ## Notable Connections & Relationships
 
-- **[The Nazgûl]({{ '/peoples/nazgul/' | relative_url }}):** The Nine, of whom he is chief.
+- **[The Nazgûl]({{ '/people/nazgul/' | relative_url }}):** The Nine, of whom he is chief.
 - **[The Battle of the Pelennor Fields]({{ '/events/pelennor-fields/' | relative_url }}):** Place of his destruction.
 - **[Éowyn]({{ '/characters/eowyn/' | relative_url }}):** Who slays him after Merry’s blow.
 - **[Minas Tirith]({{ '/locations/minas-tirith/' | relative_url }}):** City whose gate he breaks.

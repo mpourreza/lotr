@@ -29,7 +29,7 @@ Gollum is a creature formerly named Sméagol, of Stoor Hobbit-kind, who murdered
 ## Notable Connections & Relationships
 
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Bearer he serves, hates, and finally robs.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Object of his identity and desire.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Object of his identity and desire.
 - **[Mount Doom]({{ '/locations/mount-doom/' | relative_url }}):** Place of his death and the Ring’s unmaking.
 - **[Bilbo Baggins]({{ '/characters/bilbo-baggins/' | relative_url }}):** Who took the Ring in the dark and spared his life.
 

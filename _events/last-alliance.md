@@ -28,7 +28,7 @@ The Last Alliance of Elves and Men is the war led by Gil-galad and Elendil again
 ## Notable Connections & Relationships
 
 - **[Sauron]({{ '/characters/sauron/' | relative_url }}):** The enemy overthrown but not ended.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Taken, not unmade.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Taken, not unmade.
 - **[Elrond]({{ '/characters/elrond/' | relative_url }}):** Witness who remembers the fire refused.
 - **[Mount Doom]({{ '/locations/mount-doom/' | relative_url }}):** Where the refusal happens.
 

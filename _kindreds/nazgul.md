@@ -29,7 +29,7 @@ The Nazgûl are the Nine, Men who accepted Rings of Power and became wraiths who
 
 - **[The Witch-king of Angmar]({{ '/characters/witch-king/' | relative_url }}):** Their lord.
 - **[Sauron]({{ '/characters/sauron/' | relative_url }}):** Their master.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** The power that binds them.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** The power that binds them.
 - **[Weathertop]({{ '/locations/weathertop/' | relative_url }}):** Where they wound Frodo.
 
 ## Legacy & Significance

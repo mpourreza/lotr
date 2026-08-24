@@ -30,7 +30,7 @@ The Destruction of the One Ring is the climax of the Quest. At the Crack of Doom
 - **[Mount Doom]({{ '/locations/mount-doom/' | relative_url }}):** The only sufficient fire.
 - **[Frodo Baggins]({{ '/characters/frodo-baggins/' | relative_url }}):** Bearer who cannot let go.
 - **[Gollum]({{ '/characters/gollum/' | relative_url }}):** Unwilling instrument of unmaking.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** What is destroyed.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** What is destroyed.
 
 ## Legacy & Significance
 

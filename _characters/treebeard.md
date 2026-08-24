@@ -29,7 +29,7 @@ Treebeard (Fangorn) is an Ent, a shepherd of trees, among the oldest beings stil
 - **[Fangorn Forest]({{ '/locations/fangorn/' | relative_url }}):** His home and remnant wood.
 - **[Isengard]({{ '/locations/isengard/' | relative_url }}):** Target of the Ents’ march.
 - **[Peregrin Took]({{ '/characters/peregrin-took/' | relative_url }}):** Hobbit guest who helps stir him.
-- **[Ents]({{ '/peoples/ents/' | relative_url }}):** His dwindling people.
+- **[Ents]({{ '/people/ents/' | relative_url }}):** His dwindling people.
 
 ## Legacy & Significance
 

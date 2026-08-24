@@ -27,7 +27,7 @@ Anduin is the long river of Wilderland, running from the north toward the Mouths
 ## Notable Connections & Relationships
 
 - **[The Breaking of the Fellowship]({{ '/events/breaking-of-the-fellowship/' | relative_url }}):** On its banks at Parth Galen.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Lost here by Isildur.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Lost here by Isildur.
 - **[Gondor]({{ '/locations/gondor/' | relative_url }}):** Whose old kings the Argonath still name.
 
 ## Legacy & Significance

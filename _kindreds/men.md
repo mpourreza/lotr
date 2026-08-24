@@ -29,7 +29,7 @@ Men are the Secondborn, mortal, heirs of the world’s future in Tolkien’s sch
 - **[Aragorn]({{ '/characters/aragorn/' | relative_url }}):** Restored king of the Dúnedain.
 - **[Gondor]({{ '/locations/gondor/' | relative_url }}):** South-kingdom.
 - **[Rohan]({{ '/locations/rohan/' | relative_url }}):** The Mark.
-- **[The Nazgûl]({{ '/peoples/nazgul/' | relative_url }}):** Men who took Rings and faded.
+- **[The Nazgûl]({{ '/people/nazgul/' | relative_url }}):** Men who took Rings and faded.
 
 ## Legacy & Significance
 

@@ -27,7 +27,7 @@ Erebor is the Dwarf-kingdom under the Lonely Mountain, recovered in T.A. 2941 af
 
 - **[Gimli]({{ '/characters/gimli/' | relative_url }}):** Sent from this people to Rivendell.
 - **[Bilbo Baggins]({{ '/characters/bilbo-baggins/' | relative_url }}):** Whose adventure restored the Mountain.
-- **[Dwarves]({{ '/peoples/dwarves/' | relative_url }}):** Its kindred.
+- **[Dwarves]({{ '/people/dwarves/' | relative_url }}):** Its kindred.
 
 ## Legacy & Significance
 

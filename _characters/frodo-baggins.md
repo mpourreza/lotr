@@ -31,7 +31,7 @@ Frodo Baggins is a Hobbit of Bag End, heir of Bilbo Baggins, and the principal R
 
 - **[Samwise Gamgee]({{ '/characters/samwise-gamgee/' | relative_url }}):** Gardener and companion who keeps the Quest alive when Frodo’s strength fails.
 - **[Gollum]({{ '/characters/gollum/' | relative_url }}):** Former bearer and guide whose last seizure of the Ring unmakes it.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** The artefact Frodo inherits, bears, and cannot willingly cast away at the end.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** The artefact Frodo inherits, bears, and cannot willingly cast away at the end.
 - **[The Shire]({{ '/locations/the-shire/' | relative_url }}):** Homeland he leaves to save and cannot fully re-enter in spirit.
 - **[Mount Doom]({{ '/locations/mount-doom/' | relative_url }}):** Place of the Ring’s forging and destruction.
 

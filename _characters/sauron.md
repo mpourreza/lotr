@@ -27,10 +27,10 @@ Sauron is a Maia, originally of Aulë’s following, who served Melkor/Morgoth a
 
 ## Notable Connections & Relationships
 
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Repository of much of his power and the key to his return.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Repository of much of his power and the key to his return.
 - **[Mordor]({{ '/locations/mordor/' | relative_url }}):** His fenced realm.
 - **[Barad-dûr]({{ '/locations/barad-dur/' | relative_url }}):** The Dark Tower, bound to the Ring’s existence.
-- **[The Nazgûl]({{ '/peoples/nazgul/' | relative_url }}):** Enslaved kings, his chief servants.
+- **[The Nazgûl]({{ '/people/nazgul/' | relative_url }}):** Enslaved kings, his chief servants.
 
 ## Legacy & Significance
 

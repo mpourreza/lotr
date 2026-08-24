@@ -5,10 +5,10 @@ permalink: /tags/
 author_profile: false
 entries_layout: list
 classes: wide
-excerpt: "Entries grouped by tag across characters, locations, events, and peoples."
+excerpt: "Entries grouped by tag across characters, locations, events, and people."
 ---
 
-{% assign all_docs = site.characters | concat: site.locations | concat: site.events | concat: site.peoples %}
+{% assign all_docs = site.characters | concat: site.locations | concat: site.events | concat: site.kindreds %}
 {% assign tag_names = "" | split: "" %}
 {% for doc in all_docs %}
   {% for tag in doc.tags %}

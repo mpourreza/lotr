@@ -31,7 +31,7 @@ Gandalf is one of the Istari (Wizards), a Maia in mortal form, known to Elves as
 - **[Saruman]({{ '/characters/saruman/' | relative_url }}):** Fellow Istar who falls into rivalry with Sauron and is broken.
 - **[Moria]({{ '/locations/moria/' | relative_url }}):** Place of his death and of the Balrog-fight.
 - **[The Shire]({{ '/locations/the-shire/' | relative_url }}):** Region he long watched and whose Hobbits he trusts.
-- **[The Istari]({{ '/peoples/istari/' | relative_url }}):** The order of Wizards to which he belongs.
+- **[The Istari]({{ '/people/istari/' | relative_url }}):** The order of Wizards to which he belongs.
 
 ## Legacy & Significance
 

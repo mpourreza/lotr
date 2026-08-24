@@ -5,9 +5,11 @@ main:
     url: /locations/
   - title: "Events"
     url: /events/
-  - title: "Peoples"
-    url: /peoples/
+  - title: "People"
+    url: /people/
   - title: "Timeline"
     url: /timeline/
+  - title: "Family Trees"
+    url: /family-trees/
   - title: "Search"
     url: /search/

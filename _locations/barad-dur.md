@@ -28,7 +28,7 @@ Barad-dûr is Sauron’s fortress in Mordor, raised in the Second Age with the O
 
 - **[Sauron]({{ '/characters/sauron/' | relative_url }}):** Its master.
 - **[Mordor]({{ '/locations/mordor/' | relative_url }}):** The land it dominates.
-- **[The One Ring]({{ '/peoples/one-ring/' | relative_url }}):** Without which it cannot endure.
+- **[The One Ring]({{ '/people/one-ring/' | relative_url }}):** Without which it cannot endure.
 
 ## Legacy & Significance
 

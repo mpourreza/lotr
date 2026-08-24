@@ -36,7 +36,7 @@ Open `http://localhost:4000/lotr/`.
 
 ## Content
 
-Entries live in `_characters/`, `_locations/`, `_events/`, and `_peoples/`. Regenerating them:
+Entries live in `_characters/`, `_locations/`, `_events/`, and `_kindreds/` (published under `/people/`). Regenerating them:
 
 ```bash
 python3 _scripts/gen_entries.py

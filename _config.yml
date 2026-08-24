@@ -106,7 +106,7 @@ defaults:
         overlay_filter: 0.35
   - scope:
       path: ""
-      type: peoples
+      type: kindreds
     values:
       layout: single
       author_profile: false
@@ -131,9 +131,9 @@ collections:
   events:
     output: true
     permalink: /:collection/:name/
-  peoples:
+  kindreds:
     output: true
-    permalink: /:collection/:name/
+    permalink: /people/:name/
 
 category_archive:
   type: liquid

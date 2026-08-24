@@ -9,6 +9,8 @@ header:
       url: /characters/
     - label: "Walk the timeline"
       url: /timeline/
+    - label: "Trace the lineages"
+      url: /family-trees/
 excerpt: "Wander an original encyclopedia of the characters, realms, kindreds, and turning points of Middle-earth — written for this site, not copied from the books."
 feature_row:
   - title: "Characters"
@@ -26,9 +28,9 @@ feature_row:
     url: "/events/"
     btn_label: "Open"
     btn_class: "btn--primary"
-  - title: "Peoples"
+  - title: "People"
     excerpt: "The kindreds who shaped Middle-earth."
-    url: "/peoples/"
+    url: "/people/"
     btn_label: "Open"
     btn_class: "btn--primary"
 ---
