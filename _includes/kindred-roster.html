@@ -1,0 +1,38 @@
+{% assign group = site.data.character_groups | where: "kindred", page.slug | first %}
+
+{% if group %}
+  {% assign members = site.characters | sort: "title" %}
+  {% assign count = 0 %}
+  {% capture roster %}
+    {% for character in members %}
+      {% assign take = false %}
+      {% if group.include contains character.slug %}
+        {% assign take = true %}
+      {% endif %}
+      {% for tag in group.tags %}
+        {% if character.tags contains tag %}
+          {% assign take = true %}
+        {% endif %}
+      {% endfor %}
+      {% if group.exclude contains character.slug %}
+        {% assign take = false %}
+      {% endif %}
+      {% if take == true %}
+        {% assign count = count | plus: 1 %}
+        <li>
+          <a href="{{ character.url | relative_url }}">{{ character.title | escape }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+
+  {% if count > 0 %}
+    <section class="kindred-roster">
+      <h2 id="named-in-the-chronicle">Named in the chronicle</h2>
+      <p class="chronicle-epithet">{{ count }} {% if count == 1 %}figure{% else %}figures{% endif %} gathered under this kindred.</p>
+      <ul class="kindred-roster__list">
+        {{ roster }}
+      </ul>
+    </section>
+  {% endif %}
+{% endif %}

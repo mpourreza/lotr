@@ -159,6 +159,39 @@ h1, h2, h3, h4 {
   font-size: 1.15rem;
 }
 
+.character-portrait {
+  float: right;
+  width: min(100%, 16.5rem);
+  margin: 0.2rem 0 1.5rem 1.5rem;
+}
+
+.character-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid $border-color;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.character-portrait figcaption {
+  margin-top: 0.45rem;
+  font-family: $header-font-family;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $muted-text-color;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .character-portrait {
+    float: none;
+    width: min(100%, 18rem);
+    margin: 0 auto 1.5rem;
+  }
+}
+
 .timeline {
   list-style: none;
   margin: 0;
@@ -359,4 +392,454 @@ h1, h2, h3, h4 {
 .layout--collection.wide .entries-grid .archive__item {
   height: 100%;
   text-align: center;
+}
+
+@property --realm-a {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1c3a2c;
+}
+
+@property --realm-b {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3a0f12;
+}
+
+@property --realm-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #c9a227;
+}
+
+@property --realm-fog {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(11, 9, 7, 0.12);
+}
+
+html {
+  --realm-a: #1c3a2c;
+  --realm-b: #3a0f12;
+  --realm-accent: #c9a227;
+  --realm-fog: rgba(11, 9, 7, 0.12);
+}
+
+html.has-chronicle-scroll,
+html.has-chronicle-scroll body {
+  background-color: $background-color;
+  transition:
+    background-color 900ms ease,
+    --realm-a 900ms ease,
+    --realm-b 900ms ease,
+    --realm-accent 900ms ease,
+    --realm-fog 900ms ease;
+}
+
+html.has-chronicle-scroll body {
+  background-image:
+    radial-gradient(1200px 560px at 8% -8%, var(--realm-a), transparent 58%),
+    radial-gradient(900px 480px at 108% 6%, var(--realm-b), transparent 52%),
+    linear-gradient(180deg, var(--realm-fog), transparent 42%);
+}
+
+.chronicle-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.chronicle-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.chronicle-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+.chronicle-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.42;
+  transform: translate3d(0, 0, 0);
+  animation: chronicle-drift 28s ease-in-out infinite;
+}
+
+.chronicle-orb--a {
+  width: min(48vw, 28rem);
+  height: min(48vw, 28rem);
+  left: -8%;
+  top: 12%;
+  background: var(--realm-a);
+}
+
+.chronicle-orb--b {
+  width: min(42vw, 24rem);
+  height: min(42vw, 24rem);
+  right: -10%;
+  top: 38%;
+  background: var(--realm-b);
+  animation-delay: -9s;
+  animation-duration: 34s;
+}
+
+.chronicle-orb--c {
+  width: min(28vw, 16rem);
+  height: min(28vw, 16rem);
+  left: 42%;
+  bottom: -8%;
+  background: var(--realm-accent);
+  opacity: 0.14;
+  animation-delay: -16s;
+  animation-duration: 22s;
+}
+
+@keyframes chronicle-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4%, -6%, 0) scale(1.08); }
+}
+
+.masthead,
+.chronicle-main,
+.page__footer,
+.page__hero,
+.page__hero--overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.greedy-nav .site-title,
+.greedy-nav a:hover {
+  color: var(--realm-accent);
+}
+
+.masthead {
+  border-bottom-color: color-mix(in srgb, var(--realm-accent) 32%, transparent);
+}
+
+.chronicle-progress {
+  position: fixed;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.chronicle-progress a {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--realm-accent);
+  background: transparent;
+  opacity: 0.45;
+  transition: transform 300ms ease, opacity 300ms ease, background-color 300ms ease;
+}
+
+.chronicle-progress a.is-current {
+  opacity: 1;
+  background: var(--realm-accent);
+  transform: scale(1.35);
+}
+
+.layout--chronicle .page,
+.layout--chronicle .chronicle-article,
+.layout--chronicle .page__content {
+  float: none;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layout--chronicle.chronicle-home .page__hero--overlay {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+}
+
+.layout--chronicle.chronicle-kindreds .page__hero--overlay {
+  min-height: 0;
+  padding-block: 3.5rem 1.5rem;
+}
+
+.layout--chronicle .page__hero-caption {
+  max-width: 42rem;
+}
+
+.kindred-intro,
+.kindred-chapter,
+.kindred-jump {
+  width: min(72rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.kindred-intro {
+  padding: 2.5rem 0 1rem;
+}
+
+.kindred-intro__lede {
+  font-size: 1.25rem;
+  color: $muted-text-color;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kindred-jump {
+  position: relative;
+  top: auto;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem 0 1.1rem;
+  background: transparent;
+}
+
+.kindred-jump__link {
+  font-family: $header-font-family;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $muted-text-color;
+  border: 1px solid $border-color;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+
+.kindred-jump__link:hover,
+.kindred-jump__link.is-current {
+  color: #1a1408;
+  background: var(--realm-accent);
+  border-color: var(--realm-accent);
+}
+
+.kindred-chapter {
+  min-height: 0;
+  padding: 2.5rem 0 3.25rem;
+  scroll-margin-top: 4.5rem;
+}
+
+.kindred-banner {
+  position: relative;
+  top: auto;
+  z-index: auto;
+  margin-bottom: 1.6rem;
+  padding: 0.85rem 1rem 1.1rem;
+  background: transparent;
+  border-left: 2px solid var(--realm-accent);
+}
+
+.kindred-banner h2 {
+  margin: 0.15rem 0 0.2rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--realm-accent);
+}
+
+.kindred-banner__summary {
+  max-width: 40rem;
+  color: $muted-text-color;
+  margin: 0.35rem 0 0.6rem;
+}
+
+.kindred-banner__meta {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  font-family: $header-font-family;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: $muted-text-color;
+  margin: 0;
+}
+
+.kindred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5rem), 1fr));
+  gap: 1.25rem;
+}
+
+.kindred-card {
+  height: 100%;
+  text-align: center;
+  transition: transform 420ms ease, border-color 320ms ease, box-shadow 420ms ease, opacity 520ms ease;
+}
+
+.kindred-chapter.is-active .kindred-card {
+  border-color: color-mix(in srgb, var(--realm-accent) 55%, $border-color);
+}
+
+.kindred-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--realm-accent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--realm-accent);
+}
+
+.scroll-journey {
+  position: relative;
+}
+
+.journey-scene {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 1.5rem;
+  scroll-margin-top: 4rem;
+}
+
+.journey-scene__inner {
+  width: min(42rem, 100%);
+  margin-left: max(8vw, calc(50% - 36rem));
+}
+
+.journey-scene__inner--wide {
+  width: min(72rem, 100%);
+  margin-inline: auto;
+  margin-left: auto;
+}
+
+.journey-scene__title {
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
+  line-height: 0.95;
+  margin: 0.15rem 0 0.8rem;
+  color: var(--realm-accent);
+}
+
+.journey-scene__lede {
+  font-style: italic;
+  font-size: 1.35rem;
+  color: $muted-text-color;
+  margin: 0 0 1rem;
+}
+
+.journey-scene__text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+.journey-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.journey-chips a {
+  display: inline-block;
+  font-family: $header-font-family;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text-color;
+  border: 1px solid $border-color;
+  padding: 0.45rem 0.8rem;
+  background: rgba(11, 9, 7, 0.45);
+}
+
+.journey-chips a:hover {
+  border-color: var(--realm-accent);
+  color: var(--realm-accent);
+}
+
+.chronicle-portals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.journey-scene .reveal {
+  opacity: 0.28;
+  transform: translate3d(0, 28px, 0);
+  filter: blur(6px);
+  transition: opacity 800ms ease, transform 800ms ease, filter 800ms ease;
+}
+
+.journey-scene.is-active .reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.kindred-chapter:not(.is-active):not(.has-been-active) .kindred-card {
+  opacity: 0.55;
+  transform: translate3d(0, 16px, 0);
+}
+
+.kindred-roster {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-color;
+}
+
+.kindred-roster__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.35rem 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 860px) {
+  .chronicle-progress {
+    right: 0.55rem;
+  }
+
+  .journey-scene__inner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-chronicle-scroll,
+  html.has-chronicle-scroll body,
+  .chronicle-orb,
+  .kindred-card,
+  .journey-scene .reveal {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  .chronicle-veil {
+    display: none;
+  }
 }

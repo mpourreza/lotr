@@ -1,0 +1,51 @@
+<div class="scroll-journey" aria-label="A journey through the chronicle">
+  {% for scene in site.data.journey %}
+    <section class="journey-scene" id="scene-{{ scene.id }}" data-scene="{{ scene.id }}">
+      <div class="journey-scene__inner">
+        <p class="chronicle-kicker reveal">{{ scene.kicker }}</p>
+        <h2 class="journey-scene__title reveal">{{ scene.title }}</h2>
+        {% if scene.lede %}
+          <p class="journey-scene__lede reveal">{{ scene.lede }}</p>
+        {% endif %}
+        <p class="journey-scene__text reveal">{{ scene.text }}</p>
+        {% if scene.links %}
+          <ul class="journey-chips reveal">
+            {% for link in scene.links %}
+              <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if scene.cta %}
+          <p class="reveal">
+            <a class="btn btn--primary" href="{{ scene.cta.url | relative_url }}">{{ scene.cta.label }}</a>
+          </p>
+        {% endif %}
+      </div>
+    </section>
+  {% endfor %}
+
+  <section class="journey-scene journey-scene--portals" data-scene="unmaking">
+    <div class="journey-scene__inner journey-scene__inner--wide">
+      <p class="chronicle-kicker reveal">Enter the chronicle</p>
+      <h2 class="journey-scene__title reveal">Four doors into Middle-earth</h2>
+      <div class="feature__wrapper chronicle-portals">
+        <div class="feature__item">
+          <h3 class="archive__item-title"><a href="{{ '/characters/' | relative_url }}">Characters</a></h3>
+          <p>Wanderers, kings, and keepers of the Ring — grouped by kindred.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="archive__item-title"><a href="{{ '/locations/' | relative_url }}">Locations</a></h3>
+          <p>Realms of light, shadow, and everything between.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="archive__item-title"><a href="{{ '/events/' | relative_url }}">Events</a></h3>
+          <p>The turning points of the Third Age.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="archive__item-title"><a href="{{ '/people/' | relative_url }}">People</a></h3>
+          <p>The kindreds who shaped Middle-earth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

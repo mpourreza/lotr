@@ -108,7 +108,7 @@ defaults:
       path: ""
       type: kindreds
     values:
-      layout: single
+      layout: kindred
       author_profile: false
       share: false
       related: false

@@ -8,7 +8,7 @@ from extra_entries import write_extra_characters, write_extra_locations, write_e
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def md(collection, slug, title, excerpt, tags, epithet, era, overview, typ, origins, affiliations, role, history, connections, legacy):
+def md(collection, slug, title, excerpt, tags, epithet, era, overview, typ, origins, affiliations, role, history, connections, legacy, portrait=None):
     tags_yaml = "\n".join(f"  - {t}" for t in tags)
     hist = "\n".join(history)
     conn = "\n".join(
@@ -16,14 +16,24 @@ def md(collection, slug, title, excerpt, tags, epithet, era, overview, typ, orig
         for name, url, note in connections
     )
     excerpt_q = excerpt.replace('"', '\\"')
+    header_yaml = ""
+    portrait_html = ""
+    if portrait:
+        header_yaml = f"header:\n  overlay_color: \"#0b0907\"\n  overlay_filter: 0.35\n  teaser: {portrait}\n"
+        portrait_html = f"""<figure class="character-portrait">
+  <img src="{{{{ '{portrait}' | relative_url }}}}" alt="Original painted portrait of {title}" width="640" height="640">
+  <figcaption>{title}</figcaption>
+</figure>
+
+"""
     body = f"""---
 title: "{title}"
 excerpt: "{excerpt_q}"
 tags:
 {tags_yaml}
----
+{header_yaml}---
 
-*{epithet}* · {era}
+{portrait_html}*{epithet}* · {era}
 
 ## Overview & Essence
 
@@ -78,7 +88,8 @@ def main():
            ("The Shire", f"{L}/the-shire/", "Homeland he leaves to save and cannot fully re-enter in spirit."),
            ("Mount Doom", f"{L}/mount-doom/", "Place of the Ring’s forging and destruction."),
        ],
-       "Frodo’s story is the narrative spine of *The Lord of the Rings*. Canonically, the Quest succeeds through pity shown to Gollum as much as through Frodo’s own will. He is remembered in-universe as a Ring-bearer granted passage into the West, and in the framing device as the author of much of the Red Book’s account of the War.")
+       "Frodo’s story is the narrative spine of *The Lord of the Rings*. Canonically, the Quest succeeds through pity shown to Gollum as much as through Frodo’s own will. He is remembered in-universe as a Ring-bearer granted passage into the West, and in the framing device as the author of much of the Red Book’s account of the War.",
+       portrait="/assets/images/characters/frodo-baggins.png")
 
     md("characters", "samwise-gamgee", "Samwise Gamgee",
        "Frodo’s gardener and closest companion, whose loyalty and practical courage sustain the Quest through Cirith Ungol and Mordor.",

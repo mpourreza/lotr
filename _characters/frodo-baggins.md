@@ -5,7 +5,16 @@ tags:
   - hobbit
   - fellowship
   - ring-bearer
+header:
+  overlay_color: "#0b0907"
+  overlay_filter: 0.35
+  teaser: /assets/images/characters/frodo-baggins.png
 ---
+
+<figure class="character-portrait">
+  <img src="{{ '/assets/images/characters/frodo-baggins.png' | relative_url }}" alt="Original painted portrait of Frodo Baggins, a hobbit of the Shire" width="640" height="640">
+  <figcaption>Frodo Baggins of Bag End</figcaption>
+</figure>
 
 *Ring-bearer of the Shire* · Third Age
 

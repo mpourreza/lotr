@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<canvas class="chronicle-veil" id="chronicle-veil" aria-hidden="true"></canvas>
+<div class="chronicle-atmosphere" aria-hidden="true">
+  <span class="chronicle-orb chronicle-orb--a"></span>
+  <span class="chronicle-orb chronicle-orb--b"></span>
+  <span class="chronicle-orb chronicle-orb--c"></span>
+</div>
+<nav class="chronicle-progress" aria-label="Scroll scenes" hidden></nav>
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+<div id="main" role="main" class="chronicle-main">
+  <article class="page splash chronicle-article" itemscope itemtype="https://schema.org/CreativeWork">
+    <section class="page__content" itemprop="text">
+      {{ content }}
+    </section>
+  </article>
+</div>

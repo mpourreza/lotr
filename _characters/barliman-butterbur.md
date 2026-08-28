@@ -2,8 +2,8 @@
 title: "Barliman Butterbur"
 excerpt: "Innkeeper of the Prancing Pony at Bree who forgets Gandalf's letter and aids the Hobbits after the Ringwraith attack."
 tags:
-  - hobbit
   - man
+  - bree
 ---
 
 *Master of the Prancing Pony* · Third Age

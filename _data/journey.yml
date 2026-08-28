@@ -1,0 +1,107 @@
+- id: shire
+  kicker: Begin in the Westfarthing
+  title: The Shire
+  lede: Green hills, party trees, and a fire that should have been enough.
+  text: The War of the Ring does not open on a battlefield. It opens in a hole in the ground, with a birthday, an inheritance, and a secret that has already begun to stretch a hobbit thin. Courage here looks like stubbornness. The great mistake of the Dark Lord is that he never thought to look this small.
+  links:
+    - title: Frodo Baggins
+      url: /characters/frodo-baggins/
+    - title: Samwise Gamgee
+      url: /characters/samwise-gamgee/
+    - title: Bag End
+      url: /locations/bag-end/
+    - title: The Shire
+      url: /locations/the-shire/
+  cta:
+    label: Meet the Hobbits
+    url: /characters/#hobbits
+
+- id: elves
+  kicker: Memory still walking
+  title: The Elven realms
+  lede: Rivendell’s counsel. Lórien’s gold. A fading that is also a choice.
+  text: The Firstborn keep what Men forget. Elrond’s house is a refuge and a parliament. Galadriel’s wood is a test as much as a gift. Their Rings preserve rather than conquer, and their deepest act in this Age is leave-taking—ships at Mithlond, and a world handed to mortals.
+  links:
+    - title: Galadriel
+      url: /characters/galadriel/
+    - title: Elrond
+      url: /characters/elrond/
+    - title: Rivendell
+      url: /locations/rivendell/
+    - title: Lothlórien
+      url: /locations/lothlorien/
+  cta:
+    label: Walk among the Elves
+    url: /characters/#elves
+
+- id: men
+  kicker: The Age that is coming
+  title: Kingdoms of Men
+  lede: A ranger who is a king. A shield-maiden. A city of stone that will not yield.
+  text: Gondor holds the line while its throne sits empty. Rohan keeps an oath written in horses and horns. Dale and Bree prove that not every Man is a Númenórean, and not every Man is a captain. When the Elves depart, the problems of Middle-earth become, more and more, the problems of Men.
+  links:
+    - title: Aragorn
+      url: /characters/aragorn/
+    - title: Éowyn
+      url: /characters/eowyn/
+    - title: Gondor
+      url: /locations/gondor/
+    - title: Rohan
+      url: /locations/rohan/
+  cta:
+    label: See the houses of Men
+    url: /characters/#men
+
+- id: dwarves
+  kicker: Stone remembers
+  title: Halls under the mountain
+  lede: Erebor reclaimed. Moria lost. A dwarf who will not leave an Elf to walk alone.
+  text: Durin’s Folk measure time in crafts and grudges. They woke a terror in Khazad-dûm and later sent one of their own into the Fellowship anyway. Their Seven Rings kindled greed more than wraith-life. What they love, they make to outlast a lifespan.
+  links:
+    - title: Gimli
+      url: /characters/gimli/
+    - title: Thorin Oakenshield
+      url: /characters/thorin-oakenshield/
+    - title: Erebor
+      url: /locations/erebor/
+    - title: Moria
+      url: /locations/moria/
+  cta:
+    label: Enter the Dwarf-holds
+    url: /characters/#dwarves
+
+- id: orcs
+  kicker: The factories of war
+  title: The Shadow
+  lede: Mordor’s hosts. Isengard’s pits. A soldiery bred to hate even itself.
+  text: "Orcs are not a unique horror like the Ring. They are a system: breeding pits, stolen crafts, captains who rule by fear. They quarrel, and twice that quarrel lets Hobbits slip through. Behind them stand a Maia who forged a master-ring and the Nine who took lesser rings and faded."
+  links:
+    - title: Sauron
+      url: /characters/sauron/
+    - title: The Witch-king
+      url: /characters/witch-king/
+    - title: Mordor
+      url: /locations/mordor/
+    - title: Orcs
+      url: /people/orcs/
+  cta:
+    label: Face the hosts of shadow
+    url: /characters/#orcs
+
+- id: unmaking
+  kicker: An anti-quest
+  title: The Ring unmade
+  lede: Not to win an object, but to lose one on purpose.
+  text: At Orodruin the Precious is destroyed and the Dark Tower falls. The king returns. The four travelers scour their own country. Then a white ship leaves Mithlond, because some wounds do not fully heal in Middle-earth. The chronicle is a map of that cost.
+  links:
+    - title: The Destruction of the Ring
+      url: /events/destruction-of-the-ring/
+    - title: Mount Doom
+      url: /locations/mount-doom/
+    - title: The Grey Havens
+      url: /locations/grey-havens/
+    - title: The One Ring
+      url: /people/one-ring/
+  cta:
+    label: Walk the timeline
+    url: /timeline/

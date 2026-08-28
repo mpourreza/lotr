@@ -1,0 +1,85 @@
+- id: hobbits
+  title: Hobbits
+  epithet: The Little People
+  kicker: The Shire and the Stoors
+  kindred: hobbits
+  tags: [hobbit, stoor]
+  summary: A shy agrarian people, overlooked by the great, and therefore suited to carry a burden that magnifies the will to dominate.
+
+- id: men
+  title: Men
+  epithet: The Followers
+  kicker: Dúnedain, Rohirrim, and the kingdoms of Men
+  kindred: men
+  tags: [man, human, beorning]
+  summary: Mortal peoples of many banners—Gondor, Rohan, Dale, Bree—whose Age begins in earnest when the Elves depart.
+
+- id: elves
+  title: Elves
+  epithet: The Firstborn
+  kicker: Eldar, Sindar, and the Half-elven
+  kindred: elves
+  tags: [elf, half-elven]
+  exclude: [elros]
+  summary: Immortal within the life of the world, already fading in the Third Age, whose last great acts are counsel, refuge, and departure.
+
+- id: dwarves
+  title: Dwarves
+  epithet: Khazâd
+  kicker: Durin’s Folk
+  kindred: dwarves
+  tags: [dwarf]
+  summary: A hardy people of stone and craft, makers of halls and long memories, whose representative in the Fellowship becomes an Elf-friend.
+
+- id: ents
+  title: Ents
+  epithet: Shepherds of the Trees
+  kicker: Fangorn’s remnant
+  kindred: ents
+  tags: [ent]
+  summary: Tree-herds whose language is slow and whose wrath, once gathered, unmakes a wizard’s fortress.
+
+- id: maiar
+  title: "Wizards & Maiar"
+  epithet: Powers in mortal dress
+  kicker: The Istari and the Dark Lord
+  kindred: istari
+  tags: [maia, wizard]
+  summary: Spirits of the same order as Sauron, some sent to stir resistance, one who forged the Ring and spent an Age trying to reclaim it.
+
+- id: orcs
+  title: Orcs
+  epithet: The hosts of the Dark Lord
+  kicker: Goblins, Uruks, and the soldiery of shadow
+  kindred: orcs
+  tags: [orc]
+  summary: A numerous, cruel soldiery bred for war, divided by masters and hatreds, the rank-and-file of Mordor, Moria, and Isengard.
+
+- id: nazgul
+  title: The Nazgûl
+  epithet: The Nine
+  kicker: Ringwraiths
+  kindred: nazgul
+  tags: [nazgul, wraith]
+  summary: Kings of Men who took Rings from Sauron and faded into enslaved terror, the Dark Lord’s most trusted hunters.
+
+- id: beasts
+  title: Beasts of the Wild
+  epithet: Wing, scale, and hunger
+  kicker: Eagles, dragons, and older horrors
+  tags: [eagle, dragon, monster]
+  summary: Creatures who enter the War as rescuers, plunderers, or leftovers of an older evil, indifferent to banners.
+
+- id: enigmas
+  title: Enigmas
+  epithet: Oldest and fatherless
+  kicker: The Old Forest’s household
+  tags: [enigma]
+  summary: "Powers the Wise cannot file: a master of the wood whom the Ring cannot touch, and the river-daughter who keeps his house."
+
+- id: other
+  title: Other names
+  epithet: Unsorted
+  kicker: Still to be kindreded
+  catch_all: true
+  summary: Figures who have not yet been placed among the kindreds above.

@@ -1,0 +1,72 @@
+{% assign claimed = "|" %}
+<nav class="kindred-jump" aria-label="Kindreds">
+{% for group in site.data.character_groups %}
+{% unless group.catch_all %}
+<a class="kindred-jump__link" href="#{{ group.id }}">{{ group.title }}</a>
+{% endunless %}
+{% endfor %}
+</nav>
+{% for group in site.data.character_groups %}
+{% assign shown = 0 %}
+{% capture cards %}
+{% assign bucket = site.characters | sort: "title" %}
+{% for character in bucket %}
+{% assign take = false %}
+{% if group.catch_all %}
+{% assign token = "|" | append: character.slug | append: "|" %}
+{% unless claimed contains token %}
+{% assign take = true %}
+{% endunless %}
+{% else %}
+{% if group.include contains character.slug %}
+{% assign take = true %}
+{% endif %}
+{% for tag in group.tags %}
+{% if character.tags contains tag %}
+{% assign take = true %}
+{% endif %}
+{% endfor %}
+{% if group.exclude contains character.slug %}
+{% assign take = false %}
+{% endif %}
+{% assign token = "|" | append: character.slug | append: "|" %}
+{% if claimed contains token %}
+{% assign take = false %}
+{% endif %}
+{% endif %}
+{% if take == true %}
+{% assign claimed = claimed | append: character.slug | append: "|" %}
+{% assign shown = shown | plus: 1 %}
+<article class="archive__item kindred-card">
+<h3 class="archive__item-title">
+<a href="{{ character.url | relative_url }}">{{ character.title | escape }}</a>
+</h3>
+{% if character.excerpt %}
+<p class="archive__item-excerpt">{{ character.excerpt | markdownify | strip_html | truncate: 180 }}</p>
+{% endif %}
+</article>
+{% endif %}
+{% endfor %}
+{% endcapture %}
+{% if shown > 0 %}
+<section class="kindred-chapter" id="{{ group.id }}" data-scene="{{ group.id }}" aria-labelledby="kindred-{{ group.id }}-title">
+<header class="kindred-banner">
+<p class="chronicle-kicker">{{ group.kicker }}</p>
+<h2 id="kindred-{{ group.id }}-title">{{ group.title }}</h2>
+{% if group.epithet %}
+<p class="chronicle-epithet">{{ group.epithet }}</p>
+{% endif %}
+<p class="kindred-banner__summary">{{ group.summary }}</p>
+<p class="kindred-banner__meta">
+<span>{{ shown }} {% if shown == 1 %}name{% else %}names{% endif %}</span>
+{% if group.kindred %}
+<a href="{{ '/people/' | append: group.kindred | append: '/' | relative_url }}">Kindred entry</a>
+{% endif %}
+</p>
+</header>
+<div class="entries-grid kindred-grid">
+{{ cards }}
+</div>
+</section>
+{% endif %}
+{% endfor %}

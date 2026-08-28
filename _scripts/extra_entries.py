@@ -251,7 +251,7 @@ def write_extra_characters(md, C, L, E, P):
 
     md("characters", "barliman-butterbur", "Barliman Butterbur",
        "Innkeeper of the Prancing Pony at Bree who forgets Gandalf's letter and aids the Hobbits after the Ringwraith attack.",
-       ["hobbit", "man"], "Master of the Prancing Pony", "Third Age",
+       ["man", "bree"], "Master of the Prancing Pony", "Third Age",
        "Barliman Butterbur is the Man who keeps the Prancing Pony in Bree. He forgets to send Gandalf's warning letter to Frodo—a failure that nearly costs everything. After the Nazgûl attack he helps with ponies and news and later receives the returned Bill the Pony.",
        "Character (Man of Bree)",
        "Long keeper of the chief inn on the East Road; honest but absent-minded.",
